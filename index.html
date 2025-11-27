@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harry Potter API - Aplicación Mágica</title>
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Sección de Autenticación -->
+        <div id="auth-section" class="auth-container">
+            <div class="auth-box">
+                <h1>⚡ Harry Potter API</h1>
+                <div class="auth-tabs">
+                    <button id="login-tab" class="tab-btn active">Iniciar Sesión</button>
+                    <button id="register-tab" class="tab-btn">Registrarse</button>
+                </div>
+
+                <!-- Formulario de Login -->
+                <form id="login-form" class="auth-form active">
+                    <input type="email" id="login-email" placeholder="Correo electrónico" required>
+                    <input type="password" id="login-password" placeholder="Contraseña" required>
+                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                    <p class="auth-message" id="login-message"></p>
+                </form>
+
+                <!-- Formulario de Registro -->
+                <form id="register-form" class="auth-form">
+                    <input type="email" id="register-email" placeholder="Correo electrónico" required>
+                    <input type="password" id="register-password" placeholder="Contraseña (min. 6 caracteres)" required>
+                    <input type="password" id="register-confirm" placeholder="Confirmar contraseña" required>
+                    <button type="submit" class="btn btn-primary">Registrarse</button>
+                    <p class="auth-message" id="register-message"></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Sección Principal (después de autenticarse) -->
+        <div id="main-section" class="main-container" style="display: none;">
+            <nav class="navbar">
+                <h1>🧙 Harry Potter API</h1>
+                <div class="user-info">
+                    <span id="user-email"></span>
+                    <button id="logout-btn" class="btn btn-secondary">Cerrar Sesión</button>
+                </div>
+            </nav>
+
+            <main class="content">
+                <!-- Búsqueda de Personajes -->
+                <section class="search-section">
+                    <h2>Buscar Personajes</h2>
+                    <div class="search-controls">
+                        <input type="text" id="search-input" placeholder="Buscar por nombre...">
+                        <select id="filter-house">
+                            <option value="">Todas las Casas</option>
+                            <option value="Gryffindor">Gryffindor</option>
+                            <option value="Slytherin">Slytherin</option>
+                            <option value="Hufflepuff">Hufflepuff</option>
+                            <option value="Ravenclaw">Ravenclaw</option>
+                        </select>
+                        <button id="search-btn" class="btn btn-primary">Buscar</button>
+                    </div>
+                </section>
+
+                <!-- Función Original: Agregar a Favoritos -->
+                <section class="favorites-section">
+                    <h2>✨ Mis Personajes Favoritos (Guardados en Firebase)</h2>
+                    <div id="favorites-list" class="favorites-grid"></div>
+                </section>
+
+                <!-- Resultados de Búsqueda -->
+                <section class="results-section">
+                    <h2>Personajes Encontrados</h2>
+                    <div id="characters-grid" class="characters-grid"></div>
+                    <p id="no-results" class="no-results" style="display: none;">No se encontraron personajes</p>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

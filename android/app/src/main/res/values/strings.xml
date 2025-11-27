@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">harrypotterapk</string>
+    <string name="title_activity_main">harrypotterapk</string>
+    <string name="package_name">com.harrypotter.app</string>
+    <string name="custom_url_scheme">com.harrypotter.app</string>
+</resources>
